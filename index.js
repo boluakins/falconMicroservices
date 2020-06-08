@@ -13,9 +13,8 @@ const fileRoutes = require("./routes/files")
 app.use('/api/v1/files', fileRoutes);
 
 const port = (process.env.PORT || 3000);
-app.listen(port, ()=> `Server now running on ${port}`);
 app.listen(port, ()=> console.log(`Server now running on ${port}`));
-    mongoose.connect('DB_CONNECTION=mongodb+srv://boluakins:%40Akinsola1@cluster0-wounk.mongodb.net/general?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+    mongoose.connect('mongodb+srv://boluakins:%40Akinsola1@cluster0-wounk.mongodb.net/general?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
 .then((result) => {
     console.log('Atlas Connected');
     
