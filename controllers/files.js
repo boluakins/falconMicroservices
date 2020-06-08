@@ -12,7 +12,10 @@ class FileContoller {
     createFile() {
         (req, res) => {
             if (typeof req.file == undefined) {
-                return res.status(400).json('error1')
+                return res.status(400).json({
+                    status: false,
+                    message: 'Please select a file'
+                })
             } else {
                 const file = new File({
                 title: req.file.path,
