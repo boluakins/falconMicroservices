@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 app.use(cors())
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+app.use(express.static('uploads'))
 
 const fileRoutes = require("./routes/files")
 

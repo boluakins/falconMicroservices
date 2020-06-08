@@ -9,15 +9,15 @@
  */
 const File = require('../models/file');
     exports.createFile =  (req, res) => {
-            if (typeof req.file == undefined) {
+            if (typeof req.file == "undefined") {
                 return res.status(400).json({
                     status: false,
                     message: 'Please select a file'
                 })
             } else {
                 const file = new File({
-                title: req.file.path,
-                fileURL: req.file.path
+                title: req.file,
+                fileURL: req.file
             });
             file.save()
             .then((result) => {
