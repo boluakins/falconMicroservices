@@ -8,9 +8,10 @@ const {
 } = require('../controllers/files');
 
 const router = express.Router();
+const upload = require('./../middleware/uploads');
 
 
-router.post("/", createFile);
+router.post("/", upload.single('file'), createFile);
 router.get("/", getFiles);
 router.get("/:fileId", getFile);
 router.put("/:fileId", updateFile);
