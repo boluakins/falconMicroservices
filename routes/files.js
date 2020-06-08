@@ -1,17 +1,11 @@
 const express = require('express');
-const {
-  getFiles,
-  getFile,
-  createFile,
-  updateFile,
-  deleteFile
-} = require('../controllers/files');
 
 const router = express.Router();
-const upload = require('./../middleware/uploads');
+const upload = require('../middleware/uploads');
+const FilesCotroller = require('../controllers/files');
 
 
-router.post("/", upload.single('file'), createFile);
+router.post("/files", upload.single('file'), FilesCotroller.createFile);
 /* router.get("/", getFiles);
 router.get("/:fileId", getFile);
 router.put("/:fileId", updateFile);

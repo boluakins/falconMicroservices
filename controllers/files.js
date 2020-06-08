@@ -7,10 +7,8 @@
  * updateFile,
  * deleteFile
  */
-const File = require('./../models/file.model');
-class FileContoller {
-    createFile() {
-        (req, res) => {
+const File = require('../models/file');
+    exports.createFile =  (req, res) => {
             if (typeof req.file == undefined) {
                 return res.status(400).json({
                     status: false,
@@ -34,8 +32,4 @@ class FileContoller {
             }
         };
 
-    }
 
-}
-
-module.exports = new FileContoller();
