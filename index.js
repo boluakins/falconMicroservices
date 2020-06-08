@@ -10,7 +10,7 @@ app.use(express.json());
 
 const fileRoutes = require("./routes/files")
 
-app.use('/api/v1/files', fileRoutes);
+app.use('api/v1/files', fileRoutes);
 
 const port = (process.env.PORT || 3000);
 app.listen(port, ()=> console.log(`Server now running on ${port}`));
