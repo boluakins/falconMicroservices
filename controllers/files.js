@@ -16,8 +16,8 @@ const File = require('../models/file');
                 })
             } else {
                 const file = new File({
-                title: req.file,
-                fileURL: req.file
+                title: req.file.filename,
+                fileURL: req.file.path
             });
             file.save()
             .then((result) => {
